@@ -1,8 +1,31 @@
 *{
     font-family: 'Roboto Condensed', sans-serif;
 }
+#header{
+    background-color: black;
+    color: #B4B1B1;
+}
+.box-shadow a{
+    color: #B4B1B1;
+}
+.box-shadow > a:hover{
+    color: white;
+}
+.dropdown-menu a{
+    color: black;
+}
+.dropdown-toggle{
+    color: black;
+}
+.dropdown-toggle:hover{
+    color: white;
+}
+.dropdown-menu a:active{
+    background-color: black;
+}
 .sidebar-nav {
     margin-top: 20px;
     padding: 0;
     list-style: none;
 }
+
