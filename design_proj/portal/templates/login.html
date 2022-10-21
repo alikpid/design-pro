@@ -13,7 +13,7 @@
            {% csrf_token %}
            {% bootstrap_form form layout='horizontal' %}
            <input type="hidden" name="next" value="{{ next }}">
-           {% buttons submit='Войти' %} {% endbuttons %}
+           <button type="submit" href="{% url 'portal:profile' %}" class="btn btn-dark">Войти</button>
        </form>
    {% endif %}
 {% endblock %}
