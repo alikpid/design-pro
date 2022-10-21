@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def index(request):
@@ -14,3 +16,9 @@ class BBLoginView(LoginView):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+
+
+class BBLogoutView(LoginRequiredMixin, LogoutView):
+    template_name = 'logout.html'
+
+
