@@ -7,8 +7,8 @@
 {% block content %}
    <h2>Регистрация нового пользователя</h2>
    <form method="post">
-       {{ user_form.as_p }}
        {% csrf_token %}
-       <button type="submit" href="{% url 'users:register' %}" class="btn btn-dark">Зарегистрироваться</button>
+       {% bootstrap_form form layout='vertical' %}
+       {% buttons submit='Зарегистрироваться' %} {% endbuttons %}
    </form>
 {% endblock %}

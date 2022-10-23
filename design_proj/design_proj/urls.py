@@ -21,8 +21,8 @@ from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('portal.urls', namespace='')),
     path('', include('users.urls', namespace='')),
+    path('', include('portal.urls', namespace='')),
 ]
 
 if settings.DEBUG:

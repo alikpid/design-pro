@@ -1,8 +1,7 @@
 from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
-from django import forms
-from django.db import models
 from django.contrib.auth import get_user_model
+from django import forms
 
 
 class RegisterUserForm(forms.ModelForm):
@@ -14,7 +13,7 @@ class RegisterUserForm(forms.ModelForm):
     password2 = forms.CharField(label='Пароль (повторно)',
                                 widget=forms.PasswordInput,
                                 help_text='Повторите тот же самый пароль еще раз')
-    user_agreement = models.BooleanField(default=False, db_index=True,
+    user_agreement = forms.BooleanField(label='Пользовательское соглашение', required=True,
                                          help_text='Прочел и ознакомлен с <a href="http://www.sfmolga.ru/agreement.pdf'
                                                    '">Пользовательским соглашением</a>')
 
@@ -36,4 +35,4 @@ class RegisterUserForm(forms.ModelForm):
 
     class Meta:
         model = get_user_model()
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2',)
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', 'user_agreement')
