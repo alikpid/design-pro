@@ -1,8 +1,9 @@
-from django.conf.urls import url
-from . import views
+from django.urls import path
+from .views import RegisterView, RegisterDoneView
 
 app_name = 'users'
 
 urlpatterns = [
-    url(r'^register/$', views.register, name='register'),
+    path('accounts/register/done/', RegisterDoneView.as_view(), name='register_done'),
+    path('accounts/register/', RegisterView.as_view(), name='register'),
 ]

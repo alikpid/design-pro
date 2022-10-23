@@ -14,7 +14,7 @@
 <body>
 <div class="container-fluid">
    <div class="d-flex flex-column flex-md-row p-3 px-md-4 mb-3 border-bottom box-shadow" id="header">
-       <h5 class="mr-md-auto p-2">Design.pro</h5>
+       <a class="mr-md-auto p-2" href="{% url 'portal:index' %}">Design.pro</a>
        {% if user.is_authenticated %}
        <div class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Профиль</a>
