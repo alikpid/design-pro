@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import RegisterView, RegisterDoneView
-
 app_name = 'users'
 
 urlpatterns = [
