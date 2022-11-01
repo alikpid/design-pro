@@ -1,0 +1,21 @@
+{% extends "basic.html" %}
+{% block title %}{{ req.title }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row">
+        {% if req.image %}
+        <div class="col-md-auto">
+            <img src="{{ request.image.url }}" class="main-image">
+        </div>
+        {% endif %}
+        <div class="col">
+            <h2>{{ request.name }}</h2>
+            <p>{{ request.summary }}</p>
+            <p class="font-weight-bold">{{ request.category }}</p>
+            <p>{{ request.status }}</p>
+        </div>
+    </div>
+</div>
+   <p><a href="{% url 'portal:profile' %}">Назад</a></p>
+{% endblock %}

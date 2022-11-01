@@ -2,7 +2,6 @@ from django.contrib.auth import password_validation
 from django.core.exceptions import ValidationError
 from django.contrib.auth import get_user_model
 from django import forms
-from django.db import models
 from .models import AdvUser
 
 
@@ -13,9 +12,9 @@ class RegisterUserForm(forms.ModelForm):
     password2 = forms.CharField(label='Пароль (повторно)',
                                 widget=forms.PasswordInput,
                                 help_text='Повторите тот же самый пароль еще раз')
-    user_agreement = models.BooleanField(default=False, db_index=True,
-                                         help_text='Прочел и ознакомлен с <a href="http://www.sfmolga.ru/agreement.pdf'
-                                                   '">Пользовательским соглашением</a>')
+    user_agreement = forms.BooleanField(required=True, label='Пользовательское соглашение',
+                                        help_text='Прочел и ознакомлен с <a href="http://www.sfmolga.ru/agreement.pdf'
+                                                  '">Пользовательским соглашением</a>')
 
     def clean_password1(self):
         password1 = self.cleaned_data['password1']
